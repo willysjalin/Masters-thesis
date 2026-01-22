@@ -1,0 +1,161 @@
+\documentclass[10pt, titlepage, oneside, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{amssymb, graphicx, fancyhdr, color, colortbl}
+\usepackage{float}
+\usepackage{listings,hyperref}
+\usepackage{array}
+\usepackage{tabu}
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage{dirtree}
+\usepackage{siunitx}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=red,
+}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+\addbibresource{references.bib}
+\addtolength{\textheight}{20mm}
+\addtolength{\voffset}{-5mm}
+ 
+% \Section ger mindre spillutrymme, använd dem om du vill
+\newcommand{\Section}[1]{\section{#1}\vspace{-8pt}}
+\newcommand{\Subsection}[1]{\vspace{-4pt}\subsection{#1}\vspace{-8pt}}
+\newcommand{\Subsubsection}[1]{\vspace{-4pt}\subsubsection{#1}\vspace{-8pt}}
+    
+% appendices, \appitem och \appsubitem är för bilagor
+\newcounter{appendixpage}
+ 
+\newenvironment{appendices}{
+    \setcounter{appendixpage}{\arabic{page}}
+    \stepcounter{appendixpage}
+}{
+}
+ 
+\newcommand{\appitem}[2]{
+    \stepcounter{section}
+    \addtocontents{toc}{\protect\contentsline{section}{\numberline{\Alph{section}}#1}{\arabic{appendixpage}}}
+    \addtocounter{appendixpage}{#2}
+}
+ 
+\newcommand{\appsubitem}[2]{
+    \stepcounter{subsection}
+    \addtocontents{toc}{\protect\contentsline{subsection}{\numberline{\Alph{section}.\arabic{subsection}}#1}{\arabic{appendixpage}}}
+    \addtocounter{appendixpage}{#2}
+}
+ 
+% Ändra de rader som behöver ändras
+\def\typeofdoc{Project Diary}
+\def\course{Master's thesis}
+\def\courseCode{KURSKOD}
+\def\pretitle{Obligatorisk Uppgift X}
+\def\title{LABORATIONSNAMN}
+\def\name{Willy Själin}
+\def\username{willys}
+\def\email{\username{}@cs.umu.se}
+ 
+% Här börjar själva dokumentet
+\begin{document}
+ 
+    % skapar framsidan (om den inte duger: gör helt enkelt en egen)
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \begin{large}
+            \begin{tabular}{@{}p{\textwidth}@{}}
+                \textbf{\typeofdoc \hfill \today} \\
+            \end{tabular}
+        \end{large}
+        \vspace{20mm}
+        \begin{center}
+            \huge{\textbf{\course}}\\
+            \vspace{15mm}
+            \begin{large}
+                \begin{tabular}{ll}
+                    \textbf{Namn} & \name \\
+                    \textbf{E-mail} & \texttt{\email} \\
+                \end{tabular}
+            \end{large}
+            \vfill
+        \end{center}
+    \end{titlepage}
+ 
+ 
+    % fixar sidfot
+    \lfoot{\footnotesize{\name, \email}}
+    \rfoot{\footnotesize{\today}}
+    \lhead{\sc\footnotesize\title}
+    \rhead{\nouppercase{\sc\footnotesize\leftmark}}
+    \pagestyle{fancy}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+ 
+    % skapar innehållsförteckning.
+    % Tänk på att köra latex 2ggr för att uppdatera allt
+    \pagenumbering{roman}
+    
+    % och lägger in en sidbrytning
+ 
+    \pagenumbering{arabic}
+ 
+    % i Sverige har vi normalt inget indrag vid nytt stycke
+    \setlength{\parindent}{0pt}
+    % men däremot lite mellanrum
+    \setlength{\parskip}{10pt}
+ 
+    % lägger in rubrik (finns \section, men då får man mycket spillutrymme)
+    \section*{Week 1}
+    The first week of the thesis project began with geting introduced to the office and receiving a laptop that I could work on. I had the project specification finished before the course start,
+    but the research questions were very vaguely stated and the AI-techniques was not even mentioned due to time had to be spent on the exams prior to the thesis course. I set up the repository, installed
+    the necessary programs and began with the Gantt-chart. The majority of time spent on week 1 was to get familiar with the Eiffel-framework which is one of the most central part of the project. I mailed 
+    my internal supervisor and we are gonna have a meeting in the near future to talk about the uncertainties of the specification.
+
+
+    \section*{Week 3}
+    I did the following ...
+    \section*{Week 2}
+    I did the following ...
+    \section*{Week 4}
+    I did the following ...
+    \section*{Week 5}
+    I did the following ...
+    \section*{Week 6}
+    I did the following ...
+    \section*{Week 7}
+    I did the following ...
+    \section*{Week 8}
+    I did the following ...
+    \section*{Week 9}
+    I did the following ...
+    \section*{Week 10}
+    I did the following ...
+    \section*{Week 11}
+    I did the following ...
+    \section*{Week 12}
+    I did the following ...
+    \section*{Week 13}
+    I did the following ...
+    \section*{Week 14}
+    I did the following ...
+    \section*{Week 15}
+    I did the following ...
+    \section*{Week 16}
+    I did the following ...
+    \section*{Week 17}
+    I did the following ...
+    \section*{Week 18}
+    I did the following ...
+    \section*{Week 19}
+    I did the following ...
+    \section*{Week 20}
+    I did the following ...
+
+ 
+\end{document}
