@@ -1,0 +1,9 @@
+*.aux
+*.log
+*.toc
+*.bcf
+*.bbl
+*.blg
+*.out
+*.xml
+/Resources/
